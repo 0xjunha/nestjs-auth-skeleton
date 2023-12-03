@@ -2,6 +2,8 @@
 
 Framework: NestJS / typescript / REST API
 
+Web server(proxy): Nginx
+
 ORM: Prisma `v5.2.2`
 
 Package Manager: Yarn `v1.22.19`
