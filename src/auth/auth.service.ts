@@ -9,7 +9,7 @@ import { LoginDto } from './dto/auth.dto';
 export class AuthService {
   constructor(
     private readonly jwtService: JwtService,
-    private readonly configSerivce: ConfigService,
+    private readonly configService: ConfigService,
     private readonly usersService: UsersService,
   ) {}
 
@@ -22,7 +22,7 @@ export class AuthService {
     const payload = { sub: uid };
 
     const jwtSignOptions: JwtSignOptions = {
-      secret: this.configSerivce.get<string>('SUPABASE_JWT_SECRET'),
+      secret: this.configService.get<string>('SUPABASE_JWT_SECRET'),
     };
 
     return {
@@ -43,7 +43,7 @@ export class AuthService {
     // TODO: additional verification & sign in logic
 
     const jwtSignOptions: JwtSignOptions = {
-      secret: this.configSerivce.get<string>('SUPABASE_JWT_SECRET'),
+      secret: this.configService.get<string>('SUPABASE_JWT_SECRET'),
     };
 
     // verified and decoded token
